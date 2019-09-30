@@ -14,14 +14,14 @@ library('CCprofiler')
 setwd("SECSWATH_ComplexCentricAnalysis")
 evaluateCode <- TRUE
 plotPDF <- TRUE
-# Some specifications only relevant for creating the PDF protocol:
+
+## Some specifications only relevant for creating the PDF protocol:
 # knitr::opts_knit$set(root.dir = 'SECSWATH_ComplexCentricAnalysis',
 #                     warning=FALSE, message=FALSE)
 # evaluateCode <- FALSE
 # plotPDF <- FALSE
-
-#setwd("/Volumes/ibludau-1/html/NatureProtocols/")
-#rmarkdown::render("dataProcessingScript_final.R")
+## To create the PDF protocol within RStudio:
+# rmarkdown::render("CCprofiler_analysis.R")
 
 Sys.time()
 

@@ -333,7 +333,7 @@ peptideTracesSubset = subset(traces = pepTraces_filtered_FDR,
 #' for the grid seach is critical.
 #+ eval=`evaluateCode`
 gridFeatures <- performProteinGridSearch(traces = peptideTracesSubset,
-                                         corrs = c(0.8,0.9,0.95),
+                                         corrs = c(0.9,0.95),
                                          windows = c(8,10),
                                          smoothing = c(7,9),
                                          rt_heights = c(1,3),

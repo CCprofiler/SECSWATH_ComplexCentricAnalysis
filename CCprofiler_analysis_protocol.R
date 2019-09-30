@@ -10,8 +10,10 @@ library(data.table)
 
 install_github("CCprofiler/CCprofiler")
 library('CCprofiler')
-evaluateCode <- TRUE
-plotPDF <- TRUE
+# Some specifications only relevant for creating the PDF protocol:
+knitr::opts_knit$set(warning=FALSE, message=FALSE)
+evaluateCode <- FALSE
+plotPDF <- FALSE
 
 Sys.time()
 

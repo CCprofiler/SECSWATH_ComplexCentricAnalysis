@@ -335,7 +335,7 @@ gridFeatures <- performProteinGridSearch(traces = peptideTracesSubset,
                                          windows = c(8,10),
                                          smoothing = c(7,9),
                                          rt_heights = c(1,3),
-                                         n_cores = 3)
+                                         n_cores = 6)
 
 #' ## Score protein features across all grid search parameters and select the best parameter set
 #+ eval=`evaluateCode`
@@ -381,7 +381,7 @@ proteinFeatures <- findProteinFeatures(traces = pepTraces_filtered_FDR,
                                        collapse_method = "apex_only",
                                        perturb_cutoff = "5%",
                                        parallelized = TRUE,
-                                       n_cores = 3,
+                                       n_cores = 6,
                                        useRandomDecoyModel = TRUE)
 
 #' ## Score detected protein features and estimate FDR
@@ -529,7 +529,7 @@ complexFeatures <- findComplexFeatures(traces = protTraces,
                                        collapse_method = "apex_network",
                                        perturb_cutoff = "5%",
                                        parallelized = TRUE,
-                                       n_cores = 3)
+                                       n_cores = 6)
 
 #' ### Filter complex features according to their apparent molecular weight
 #' Detected protein complex features that elute at an apparent molecular weight
@@ -585,7 +585,7 @@ plotSummarizedComplexes(complexFeatures = complexFeaturesAll,
 
 #' ### Plot example complex
 #+ eval=`evaluateCode`
-testComplex <- unique(complexFeaturesAll$complex_id)[1]
+testComplex <- "181"
 plotFeatures(feature_table = complexFeaturesAll,
              traces = protTraces,
              calibration = calibration,

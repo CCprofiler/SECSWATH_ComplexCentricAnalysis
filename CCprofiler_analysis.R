@@ -228,11 +228,15 @@ pepTracesSibPepCorr <- calculateSibPepCorr(traces = pepTracesConsIds,
 #' estimation approach (A), or a fixed cutoff can be applied (B):
 #'
 #' ### A.	SPC based FDR cutoff:
+#' A conservative FFT can be estimated from the unfractionad SEC input sample 
+#' that was also used to train the PyProphet model for peptide-centric analysis. 
+#' This is conservative, because we expect to see cummulatively more proteins 
+#' in the SEC fractions than in the single unfractionated input sample.
+#' The estimated pi0 ~ FFT is reported in the protein-level pdf report. 
+#' For this dataset the was estimated to be 0.491.
+
 #+ eval=`evaluateCode`
-# First estimate the FFT:
-# The combined human assay library contains 10316 proteins.
-cummulativeProteins <- length(unique(pepTracesSibPepCorr$trace_annotation$protein_id[grep("DECOY",pepTracesSibPepCorr$trace_annotation$protein_id,invert=TRUE)]))
-estimatedFFT <- (10316-cummulativeProteins)/10316
+estimatedFFT <- 0.491
 # Filter by FDR cutoff using the estimated FFT:
 pepTraces_filtered_FDR <- filterBySibPepCorr(traces = pepTracesSibPepCorr,
                                              fdr_cutoff = 0.01,

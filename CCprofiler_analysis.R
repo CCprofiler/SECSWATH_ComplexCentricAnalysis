@@ -323,6 +323,7 @@ Sys.time()
 #' require a lot of processing time. We therefore propose a random selection of ~500 proteins.
 #+ eval=`evaluateCode`
 all_proteins <- unique(pepTraces_filtered_absoluteCutoff$trace_annotation$protein_id)
+set.seed(123)
 testProtein_idx <- sample(1:length(all_proteins), 500)
 testProteins = all_proteins[testProtein_idx]
 peptideTracesSubset = subset(traces = pepTraces_filtered_FDR,

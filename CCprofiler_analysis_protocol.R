@@ -256,6 +256,7 @@ pepTraces_filtered_absoluteCutoff <- filterBySibPepCorr(traces = pepTracesSibPep
 
 #' #	Data inspection and quality control
 #' ## Summary statistics
+#+ eval=`evaluateCode`
 summary(pepTraces_filtered_FDR)
 #' ## Plotting of example traces
 #' Exemplary visualization of the Proteasome subunit alpha type-1
